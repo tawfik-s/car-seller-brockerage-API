@@ -61,3 +61,14 @@ exports.UpdateCar = async (req, res) => {
         res.status(400).send({ message: 'error!' });
     }
 }
+
+exports.getCarById = async (req, res) => {
+    try {
+        const car = await Car.findById(req.params.id);
+        console.log(car);
+        res.send(car);
+    } catch (err) {
+        console.error(err.message);
+        res.status(400).send({ message: 'error!' });
+    }
+}
