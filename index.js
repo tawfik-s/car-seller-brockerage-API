@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const car = require('./Routes/car');
+const car = require('./Routes/carRouter');
 //const seller = require('./Routes/seller');
 const logger = require('./middleware/logger')
 
