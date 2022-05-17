@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const car = require('./Routes/carRouter');
+const carRouter = require('./Routes/carRouter');
+const authRouter = require('./Routes/authRouter')
 //const seller = require('./Routes/seller');
 const logger = require('./middleware/logger')
 
@@ -11,7 +12,8 @@ app.use(express.json());
 //app.use(logger);
 
 
-app.use('/car', car);
+app.use('/car', carRouter);
+app.use('/auth', authRouter);
 //app.use('/seller', seller);
 
 

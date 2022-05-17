@@ -8,7 +8,6 @@ const { getCars,
 } = require("../services/carService")
 
 
-//get all data
 router.get("/", getCars);
 router.get("/:id", getCarById);
 router.post("/", CreateCar);
