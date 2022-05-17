@@ -17,6 +17,7 @@ exports.CreateCar = async (req, res) => {
 
     try {
         const car = new Car({
+            Car_owner_id: req.body.Car_owner_id,
             Car_name: req.body.Car_name,
             Car_type: req.body.Car_type,
             Car_color: req.body.Car_color,
@@ -48,7 +49,8 @@ exports.UpdateCar = async (req, res) => {
     try {
         const car = await Car.findById(req.params.id);
         if (!car) res.send({ message: 'there is no such item' });
-        car.Car_name = req.body.Car_name;
+        car.Car_owner_id = req.body.Car_owner_id,
+            car.Car_name = req.body.Car_name;
         car.Car_type = req.body.Car_type;
         car.Car_color = req.body.Car_color;
         car.tags = req.body.tags;
