@@ -12,8 +12,3 @@ exports.authenticateToken = (req, res, next) => {
         next()
     })
 }
-
-
-exports.generateAccessToken = (user) => {
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1200s' })
-}

@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const carRouter = require('./routes/carRouter');
 const authRouter = require('./routes/authRouter')
-//const seller = require('./Routes/seller');
+const seller = require('./Routes/seller');
 const logger = require('./middleware/logger')
 require('dotenv').config()
 //my-middleware

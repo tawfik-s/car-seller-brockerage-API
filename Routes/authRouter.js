@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { generateAccessToken } = require("../services/authService")
+const { generateAccessToken } = require("../utils/generateAccessToken")
 const jwt = require('jsonwebtoken')
 
 let refreshTokens = []
@@ -23,7 +23,7 @@ router.delete('/logout', (req, res) => {           //delete token
 
 router.post('/login', (req, res) => {  //send access token
     const username = req.body.username
-    const user = { name: username }   //we will handle this after add the route seller
+    const user = { name: username }   //we will handle this after add the route seller to check password and add user id to the Access token
 
     const accessToken = generateAccessToken(user)
     const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
