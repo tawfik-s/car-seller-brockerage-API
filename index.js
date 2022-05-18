@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const carRouter = require('./Routes/carRouter');
-const authRouter = require('./Routes/authRouter')
+const carRouter = require('./routes/carRouter');
+const authRouter = require('./routes/authRouter')
 //const seller = require('./Routes/seller');
 const logger = require('./middleware/logger')
 require('dotenv').config()
