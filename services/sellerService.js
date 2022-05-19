@@ -24,16 +24,21 @@ exports.checkSellerIfExistService = async (user) => {
 exports.registerSeller = async (req, res) => {
 
     try {
-
-        const seller = new Seller({
-            Seller_name: req.body.Seller_name,
-            Seller_email: req.body.Seller_email,
-            Seller_address: req.body.Seller_address,
-            Seller_password: req.body.Seller_password
-        });
-        const result = await seller.save();
-        console.log(result);
-        res.status(200).send({ message: 'done' });
+        const ifExist = await Seller.findOne({ Seller_email: req.body.Seller_email });
+        if (ifExist != null) {
+            res.status(409).json({ message: "seller is already exist" });
+            res.send();
+        } else {
+            const seller = new Seller({
+                Seller_name: req.body.Seller_name,
+                Seller_email: req.body.Seller_email,
+                Seller_address: req.body.Seller_address,
+                Seller_password: req.body.Seller_password
+            });
+            const result = await seller.save();
+            console.log(result);
+            res.status(200).send({ message: 'done' });
+        }
     } catch (err) {
         console.error(err.message);
         res.status(400).send({ message: 'error!' });
