@@ -17,7 +17,7 @@ exports.CreateCar = async (req, res) => {
 
     try {
         const car = new Car({
-            Car_owner_id: req.body.Car_owner_id,
+            Car_owner_id: req.user.id,
             Car_name: req.body.Car_name,
             Car_type: req.body.Car_type,
             Car_color: req.body.Car_color,
@@ -36,7 +36,7 @@ exports.CreateCar = async (req, res) => {
 
 exports.DeleteCar = async (req, res) => {
     try {
-        const result = await Car.deleteOne({ _id: req.params.id });   //deleteMany to delete more than one
+        const result = await Car.deleteOne({ Car_owner_id: req.user.id, _id: req.params.id });   //deleteMany to delete more than one
         console.log(result);
         res.status(200).send({ message: 'done' });
     } catch (err) {
@@ -47,10 +47,9 @@ exports.DeleteCar = async (req, res) => {
 
 exports.UpdateCar = async (req, res) => {
     try {
-        const car = await Car.findById(req.params.id);
+        const car = await Car.findOne({ Car_owner_id: req.user.id, _id: req.params.id });
         if (!car) res.send({ message: 'there is no such item' });
-        car.Car_owner_id = req.body.Car_owner_id,
-            car.Car_name = req.body.Car_name;
+        car.Car_name = req.body.Car_name;
         car.Car_type = req.body.Car_type;
         car.Car_color = req.body.Car_color;
         car.tags = req.body.tags;

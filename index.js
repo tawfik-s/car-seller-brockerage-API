@@ -1,20 +1,20 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
-const carRouter = require('./routes/carRouter');
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const carRouter = require('./routes/carRouter')
 const authRouter = require('./routes/authRouter')
-const seller = require('./Routes/seller');
+const seller = require('./routes/sellerRouter')
 const logger = require('./middleware/logger')
 require('dotenv').config()
 //my-middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
 //app.use(logger);
 
 
-app.use('/car', carRouter);
-app.use('/auth', authRouter);
-//app.use('/seller', seller);
+app.use('/car', carRouter)
+app.use('/auth', authRouter)
+app.use('/seller', seller)
 
 
 //port
