@@ -4,12 +4,12 @@ const cors = require("cors")
 const carRouter = require('./routes/carRouter')
 const authRouter = require('./routes/authRouter')
 const seller = require('./routes/sellerRouter')
-const logger = require('./middleware/logger')
+const logger = require('./middlewares/logger')
 require('dotenv').config()
-//my-middleware
+
 app.use(cors())
 app.use(express.json())
-//app.use(logger);
+app.use(logger);
 
 
 app.use('/car', carRouter)

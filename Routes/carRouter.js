@@ -5,9 +5,9 @@ const { getCars,
     DeleteCar,
     UpdateCar,
     getCarById
-} = require("../services/carService")
+} = require("../controllers/carController")
 
-const { authenticateToken } = require("../services/authService");
+const { authenticateToken } = require("../middlewares/authMiddleware");
 
 
 router.get("/", getCars);

@@ -8,8 +8,8 @@ const log = winston.createLogger({
     transports: [
         new winston.transports.File({
             filename: './logs/info.log',
-        }),
-        new winston.transports.Console()
+        })//,
+        //new winston.transports.Console()
     ],
 });
 
