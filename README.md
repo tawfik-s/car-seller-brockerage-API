@@ -1,6 +1,7 @@
 # car-seller-brockerage-API
 
+Hi this api is C2C business model that enables customers to trade with each other, frequently in an online environment.
+C2C businesses are a type of business model that emerged with e-commerce technology and the sharing economy
 
-this is an application API which we use to a B2C and c2c application 
-a bisiness or a a seller register on the site and add his cars users see this car's and phone him 
-using his phone number which is added in any product description
+this application for car trading user can see all cars in the application and see all cars for a specific user.
+seller can add his cars to the shop and do CRUD operations on them users see the cars and phone the shop the car owner to get more details or to meet him to buy the car some thing like olx 
