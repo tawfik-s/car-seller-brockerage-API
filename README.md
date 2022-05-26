@@ -11,7 +11,7 @@ seller can add his cars to the shop and do CRUD operations on them users see the
 
 1- install nodejs on your server <br />
 2- clone the repository on your server <br />
-3- modify the environment variables in the .env file 
-4- run npm install
-5- run npm start
-6- delete the .env file
+3- modify the environment variables in the .env file <br>
+4- run npm install<br />
+5- run npm start<br />
+6- delete the .env file <br />
