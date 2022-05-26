@@ -5,8 +5,8 @@ const carRouter = require('./routes/carRouter')
 const authRouter = require('./routes/authRouter')
 const seller = require('./routes/sellerRouter')
 const logger = require('./middlewares/logger')
-require('dotenv').config()
 
+require('dotenv').config()
 app.use(cors())
 app.use(express.json())
 app.use(logger);
