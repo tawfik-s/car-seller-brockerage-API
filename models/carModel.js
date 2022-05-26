@@ -6,22 +6,22 @@ const CarSchema = new mongoose.Schema({
     Car_owner_id: {
         type: String,
         required: true,
-        maxlength: 70
+        maxlength: 700
     },
     Car_name: {
         type: String,
         required: true,
-        maxlength: 40,
+        maxlength: 400,
         minlength: 5
     },
     Car_type: {
         type: String,
         required: true,
-        maxlength: 40
+        maxlength: 400
     },
     Car_color: {
         type: String,
-        maxlength: 40
+        maxlength: 400
     },
     tags: [String],
     date: { type: Date, default: Date.now },
