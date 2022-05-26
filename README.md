@@ -5,3 +5,7 @@ C2C businesses are a type of business model that emerged with e-commerce technol
 
 this application for car trading user can see all cars in the application and see all cars for a specific user.
 seller can add his cars to the shop and do CRUD operations on them users see the cars and phone the shop the car owner to get more details or to meet him to buy the car some thing like olx 
+
+####to run this project all you want to do on the server you want to deploy on is the following
+
+
