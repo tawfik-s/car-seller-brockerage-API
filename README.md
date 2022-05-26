@@ -9,8 +9,8 @@ seller can add his cars to the shop and do CRUD operations on them users see the
 ### to run this project all you want to do on the server which you will deploy the application on is the following
 
 
-1- install nodejs on your server
-2- clone the repository on your server 
+1- install nodejs on your server <br />
+2- clone the repository on your server <br />
 3- modify the environment variables in the .env file 
 4- run npm install
 5- run npm start
