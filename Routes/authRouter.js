@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { refreshTokenController, logoutTokenController: deleteTokenController, loginController } = require("../controllers/authController")
+const { refreshTokenController, deleteTokenController, loginController } = require("../controllers/authController")
 
 
 router.post('/token', refreshTokenController)
