@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { refreshTokenController, loginController, logoutTokenController } = require("../controllers/authController")
+const { refreshTokenController, loginController, logoutController } = require("../controllers/authController")
 
 
 router.post('/token', refreshTokenController)
 
-router.delete('/logout', logoutTokenController)
+router.delete('/logout', logoutController)
 
 router.post('/login', loginController)
 

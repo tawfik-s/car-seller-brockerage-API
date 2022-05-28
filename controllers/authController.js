@@ -20,7 +20,7 @@ exports.refreshTokenController = (req, res) => {      //refreshtoken
     }
 }
 
-exports.logoutTokenController = (req, res) => {           //delete token
+exports.logoutController = (req, res) => {           //delete token
     try {
         refreshTokens = refreshTokens.filter(token => token !== req.body.token)
         res.clearCookie("refreshToken")
