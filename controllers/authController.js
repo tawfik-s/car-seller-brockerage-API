@@ -50,7 +50,8 @@ exports.loginController = async (req, res) => {  //send access token
             refreshTokens.push(refreshToken)
             res.cookie("accessToken", accessToken)
             res.cookie("refreshToken", refreshToken)
-            res.json({ accessToken: accessToken, refreshToken: refreshToken })
+            res.send();
+            //res.json({ accessToken: accessToken, refreshToken: refreshToken })
         }
     } catch (err) {
         console.error(err.message);
