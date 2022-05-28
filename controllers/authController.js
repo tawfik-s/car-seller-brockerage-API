@@ -23,6 +23,8 @@ exports.refreshTokenController = (req, res) => {      //refreshtoken
 exports.logoutTokenController = (req, res) => {           //delete token
     try {
         refreshTokens = refreshTokens.filter(token => token !== req.body.token)
+        res.clearCookie("refreshToken")
+        res.clearCookie("accessToken")
         res.sendStatus(204)
     } catch (err) {
         console.error(err.message);
@@ -46,6 +48,8 @@ exports.loginController = async (req, res) => {  //send access token
             const accessToken = generateAccessToken(user)
             const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
             refreshTokens.push(refreshToken)
+            res.cookie("accessToken", accessToken)
+            res.cookie("refreshToken", refreshToken)
             res.json({ accessToken: accessToken, refreshToken: refreshToken })
         }
     } catch (err) {

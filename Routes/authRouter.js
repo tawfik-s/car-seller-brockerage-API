@@ -5,7 +5,7 @@ const { refreshTokenController, loginController, logoutTokenController } = requi
 
 router.post('/token', refreshTokenController)
 
-router.delete('/logout', loginController)
+router.delete('/logout', logoutTokenController)
 
 router.post('/login', loginController)
 
