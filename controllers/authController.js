@@ -1,7 +1,7 @@
 const { generateAccessToken } = require("../utils/generateAccessToken")
 const jwt = require('jsonwebtoken')
 const { checkSellerIfExistService } = require("./sellerController");
-
+const { authenticateToken } = require("../middlewares/authMiddleware")
 let refreshTokens = []
 
 exports.refreshTokenController = (req, res) => {      //refreshtoken
